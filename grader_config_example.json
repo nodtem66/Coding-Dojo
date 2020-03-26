@@ -1,0 +1,15 @@
+{
+    "round": 0,
+    "criterias": [
+        { "from": 0, "to": 49, "grade": "F"},
+        { "from": 50, "to": 54, "grade": "D"},
+        { "from": 55, "to": 59, "grade": "D+"},
+        { "from": 60, "to": 64, "grade": "C"},
+        { "from": 65, "to": 69, "grade": "C+"},
+        { "from": 70, "to": 74, "grade": "B"},
+        { "from": 75, "to": 79, "grade": "B+"},
+        { "from": 80, "to": 100, "grade": "A"},
+        { "from": 100, "grade": "A+"}
+    ],
+    "default": "-"
+}

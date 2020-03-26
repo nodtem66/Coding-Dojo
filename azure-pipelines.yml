@@ -1,0 +1,35 @@
+trigger:
+- master
+
+variables:
+  python.version: '3.3'
+
+strategy:
+  matrix:
+    Linux:
+      vmImage: 'ubuntu-latest'
+    macOS:
+      vmImage: 'macOS-latest'
+    Windows:
+      vmImage: 'vs2017-win2016'
+      
+pool:
+  vmImage: $(vmImage)
+steps:
+- task: UsePythonVersion@0
+  displayName: 'Use Python $(python.version)'
+  inputs:
+    versionSpec: '$(python.version)'
+- script: python test.py
+  displayName: 'UnitTest'
+- script: |
+    pip install coverage
+    coverage run test.py
+    coverage html
+    coverage xml
+  displayName: 'Install coverage'
+- task: PublishCodeCoverageResults@1
+  inputs:
+  codeCoverageTool: Cobertura
+  summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+  reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'
