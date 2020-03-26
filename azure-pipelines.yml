@@ -19,7 +19,7 @@ steps:
 - task: UsePythonVersion@0
   displayName: 'Use Python $(python.version)'
   inputs:
-    versionSpec: '$(python.version)'
+    versionSpec: $(python.version)
 - script: python test.py
   displayName: 'UnitTest'
 - script: |
@@ -30,6 +30,6 @@ steps:
   displayName: 'Install coverage'
 - task: PublishCodeCoverageResults@1
   inputs:
-  codeCoverageTool: Cobertura
-  summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
-  reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'

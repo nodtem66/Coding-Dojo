@@ -1,4 +1,5 @@
 # Coding Dojo
+[![Build Status](https://dev.azure.com/n66/PublicCI/_apis/build/status/nodtem66.Coding-Dojo?branchName=master)](https://dev.azure.com/n66/PublicCI/_build/latest?definitionId=3&branchName=master)
 > https://github.com/saladpuk/Coding-Dojo
 
 ## โปรแกรมตัดเกรด
