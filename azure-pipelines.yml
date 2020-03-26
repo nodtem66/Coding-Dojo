@@ -2,7 +2,7 @@ trigger:
 - master
 
 variables:
-  python.version: '3.3'
+  python.version: '3.5'
 
 strategy:
   matrix:
